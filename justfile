@@ -39,3 +39,19 @@ alias fw := full-write
 # Run tests
 test:
     cargo test
+
+# ---------------------------------------------------------------------------- #
+#                                   RELEASE                                    #
+# ---------------------------------------------------------------------------- #
+
+# Check for semver violations against the latest git tag
+semver-check:
+    cargo semver-checks --baseline-rev "$(git describe --tags --abbrev=0)"
+
+# Dry-run a release (default: patch bump)
+release-dry-run level="patch":
+    cargo release {{level}} --no-confirm
+
+# Perform a release (patch, minor, or major)
+release level="patch":
+    cargo release {{level}} --execute
