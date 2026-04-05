@@ -7,9 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
-## [0.1.0] - 2026-03-25
-
 ### Added
 
-- Initial project setup with serde/serde_json
-- Point struct with JSON serialization
+- initial commit
+- add serde serialization example
+- add VSCode settings
+- justfile
+
+### Changed
+
+- run only cargo clippy
+- extract Point into library crate and add release tooling
+
+
