@@ -107,3 +107,17 @@ alias cu := cargo-update
 cargo-update-all *args:
     bash scripts/cargo_update_all.sh {{args}}
 alias cua := cargo-update-all
+
+# ---------------------------------------------------------------------------- #
+#                             TEMPLATE REVIEW                                  #
+# ---------------------------------------------------------------------------- #
+
+# Review a downstream project for improvements to backport into the template (dry-run by default; --execute to run, optional target dir)
+template-review *args:
+    bash scripts/template_review.sh {{args}}
+alias tr := template-review
+
+# Review all downstream projects in parallel for backport candidates (dry-run by default; --execute to run)
+template-review-all *args:
+    bash scripts/template_review_all.sh {{args}}
+alias tra := template-review-all
