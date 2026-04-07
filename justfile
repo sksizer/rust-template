@@ -121,3 +121,17 @@ alias tr := template-review
 template-review-all *args:
     bash scripts/template_review_all.sh {{args}}
 alias tra := template-review-all
+
+# ---------------------------------------------------------------------------- #
+#                            TEMPLATE BACKPORT                                 #
+# ---------------------------------------------------------------------------- #
+
+# Backport improvements from a downstream project into a fresh template clone and open a PR (dry-run by default; --execute to run)
+template-backport *args:
+    bash scripts/template_backport.sh {{args}}
+alias tb := template-backport
+
+# Backport improvements from all downstream projects, one PR each (dry-run by default; --execute to run)
+template-backport-all *args:
+    bash scripts/template_backport_all.sh {{args}}
+alias tba := template-backport-all
