@@ -70,6 +70,10 @@ outdated:
 audit:
     cargo audit
 
+# Install optional cargo tools used by other recipes (cargo-outdated, cargo-audit)
+install-tools:
+    cargo install --locked cargo-outdated cargo-audit
+
 # ---------------------------------------------------------------------------- #
 #                                   RELEASE                                    #
 # ---------------------------------------------------------------------------- #
