@@ -18,5 +18,164 @@
     "global_applies": ["CLAUDE.md"],
     "forbidden_paths": [".github/**", "Cargo.toml", "justfile", "WORKSPACE", "MODULE.bazel"]
   },
-  "cousins": []
+  "cousins": [
+    {
+      "name": "template-tauri-nuxt",
+      "url": "https://github.com/sksizer/template-tauri-nuxt",
+      "notes": "Tauri + Nuxt template. Rust crate lives at src-tauri/. Root-level tooling (justfile, cliff.toml, .editorconfig, .prettierrc.yml, CLAUDE.md, scripts/, lefthook, commitlint, mise, release-it, Makefile) is owned by a different upstream (the Tauri template chain) — do NOT touch. Toolchain is pinned via mise.toml, not rust-toolchain.toml. Frontend is at src-nuxt/ and is entirely off-limits.",
+      "targets": [
+        {
+          "path": "src-tauri",
+          "applies": ["rustfmt.toml"],
+          "check": "cargo fmt --manifest-path src-tauri/Cargo.toml -- --check"
+        }
+      ],
+      "global_applies": [],
+      "forbidden_paths": [
+        ".github/**",
+        "package.json",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "Makefile",
+        "justfile",
+        "cliff.toml",
+        "lefthook.yml",
+        "commitlint.config.ts",
+        "mise.toml",
+        ".release-it.json",
+        ".editorconfig",
+        ".prettierrc.yml",
+        "CLAUDE.md",
+        "scripts/**",
+        "docs/**",
+        "src-nuxt/**",
+        "src-tauri/Cargo.toml",
+        "src-tauri/Cargo.lock",
+        "src-tauri/build.rs",
+        "src-tauri/tauri.conf.json",
+        "src-tauri/capabilities/**",
+        "src-tauri/icons/**",
+        "src-tauri/src/**"
+      ]
+    },
+    {
+      "name": "template-tauri-vue",
+      "url": "https://github.com/sksizer/template-tauri-vue",
+      "notes": "Tauri + Vue template. Rust crate at src-tauri/. Uses pnpm workspaces. Frontend at src-vue/. Root-level tooling owned by the Tauri template chain — do not touch. Toolchain via mise.toml.",
+      "targets": [
+        {
+          "path": "src-tauri",
+          "applies": ["rustfmt.toml"],
+          "check": "cargo fmt --manifest-path src-tauri/Cargo.toml -- --check"
+        }
+      ],
+      "global_applies": [],
+      "forbidden_paths": [
+        ".github/**",
+        "package.json",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "Makefile",
+        "justfile",
+        "cliff.toml",
+        "lefthook.yml",
+        "commitlint.config.ts",
+        "mise.toml",
+        ".release-it.json",
+        ".editorconfig",
+        ".prettierrc.yml",
+        "CLAUDE.md",
+        "scripts/**",
+        ".scripts/**",
+        "docs/**",
+        "src-vue/**",
+        "src-tauri/Cargo.toml",
+        "src-tauri/build.rs",
+        "src-tauri/tauri.conf.json",
+        "src-tauri/capabilities/**",
+        "src-tauri/icons/**",
+        "src-tauri/src/**"
+      ]
+    },
+    {
+      "name": "template-tauri-vanillajs",
+      "url": "https://github.com/sksizer/template-tauri-vanillajs",
+      "notes": "Tauri + Vanilla JS template. Rust crate at src-tauri/. Frontend at src-web/. Root-level tooling owned by the Tauri template chain — do not touch. Toolchain via mise.toml.",
+      "targets": [
+        {
+          "path": "src-tauri",
+          "applies": ["rustfmt.toml"],
+          "check": "cargo fmt --manifest-path src-tauri/Cargo.toml -- --check"
+        }
+      ],
+      "global_applies": [],
+      "forbidden_paths": [
+        ".github/**",
+        "package.json",
+        "pnpm-lock.yaml",
+        "Makefile",
+        "cliff.toml",
+        "lefthook.yml",
+        "commitlint.config.ts",
+        "mise.toml",
+        ".release-it.json",
+        ".editorconfig",
+        ".prettierrc.yml",
+        "CLAUDE.md",
+        "scripts/**",
+        ".scripts/**",
+        "src-web/**",
+        "src-tauri/Cargo.toml",
+        "src-tauri/Cargo.lock",
+        "src-tauri/build.rs",
+        "src-tauri/tauri.conf.json",
+        "src-tauri/capabilities/**",
+        "src-tauri/gen/**",
+        "src-tauri/icons/**",
+        "src-tauri/src/**"
+      ]
+    },
+    {
+      "name": "template-tauri-astro",
+      "url": "https://github.com/sksizer/template-tauri-astro",
+      "notes": "Tauri + Astro template. Rust crate at src-tauri/. Frontend at src-astro/ with vite.config.ts and tsconfig.json at the repo root. Root-level tooling owned by the Tauri template chain — do not touch. Toolchain via mise.toml / .prototools.",
+      "targets": [
+        {
+          "path": "src-tauri",
+          "applies": ["rustfmt.toml"],
+          "check": "cargo fmt --manifest-path src-tauri/Cargo.toml -- --check"
+        }
+      ],
+      "global_applies": [],
+      "forbidden_paths": [
+        ".github/**",
+        ".vscode/**",
+        "package.json",
+        "pnpm-lock.yaml",
+        "Makefile",
+        "justfile",
+        "cliff.toml",
+        "lefthook.yml",
+        "commitlint.config.ts",
+        "mise.toml",
+        ".prototools",
+        ".release-it.json",
+        ".editorconfig",
+        ".prettierrc.yml",
+        "CLAUDE.md",
+        "tsconfig.json",
+        "vite.config.ts",
+        "scripts/**",
+        "docs/**",
+        "src-astro/**",
+        "src-tauri/Cargo.toml",
+        "src-tauri/Cargo.lock",
+        "src-tauri/build.rs",
+        "src-tauri/tauri.conf.json",
+        "src-tauri/capabilities/**",
+        "src-tauri/icons/**",
+        "src-tauri/src/**"
+      ]
+    }
+  ]
 }
