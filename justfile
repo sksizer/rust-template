@@ -51,6 +51,25 @@ alias fw := full-write
 test:
     cargo test
 
+# Run the same checks CI runs locally (full-check + tests)
+ci: full-check test
+
+# Build API docs (no deps)
+doc:
+    cargo doc --no-deps
+
+# Build API docs and open in the browser
+doc-open:
+    cargo doc --no-deps --open
+
+# List dependencies with newer versions available (requires cargo-outdated)
+outdated:
+    cargo outdated
+
+# Check dependencies for known security advisories (requires cargo-audit)
+audit:
+    cargo audit
+
 # ---------------------------------------------------------------------------- #
 #                                   RELEASE                                    #
 # ---------------------------------------------------------------------------- #
